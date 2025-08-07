@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <a class="fontNormal" href="mailto:contact@${domain
                   .split(" ")
                   .join("")}.com" class="text-sm tracking-tight">
-                    contact@${domain.split(" ").join("")}.com
+                    contact@${domain.split(" ").join("")}
                 </a>
             </div>
         </div>`;
