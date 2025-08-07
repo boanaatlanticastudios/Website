@@ -7,19 +7,9 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-400: oklch(70.4% 0.191 22.216);
-    --color-red-500: oklch(63.7% 0.237 25.331);
-    --color-red-600: oklch(57.7% 0.245 27.325);
-    --color-yellow-200: oklch(94.5% 0.129 101.54);
-    --color-lime-200: oklch(93.8% 0.127 124.321);
-    --color-lime-600: oklch(64.8% 0.2 131.684);
-    --color-blue-400: oklch(70.7% 0.165 254.624);
-    --color-blue-500: oklch(62.3% 0.214 259.815);
-    --color-neutral-700: oklch(37.1% 0 0);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
-    --container-6xl: 72rem;
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
     --text-xl: 1.25rem;
@@ -30,13 +20,13 @@
     --text-3xl--line-height: calc(2.25 / 1.875);
     --text-4xl: 2.25rem;
     --text-4xl--line-height: calc(2.5 / 2.25);
-    --font-weight-semibold: 600;
+    --text-5xl: 3rem;
+    --text-5xl--line-height: 1;
+    --text-8xl: 6rem;
+    --text-8xl--line-height: 1;
     --tracking-tight: -0.025em;
-    --radius-sm: 0.25rem;
-    --radius-lg: 0.5rem;
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --blur-2xl: 40px;
-    --aspect-video: 16 / 9;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -213,8 +203,8 @@
   .z-10 {
     z-index: 10;
   }
-  .z-40 {
-    z-index: 40;
+  .z-50 {
+    z-index: 50;
   }
   .m-2 {
     margin: calc(var(--spacing) * 2);
@@ -272,9 +262,6 @@
   }
   .w-16 {
     width: calc(var(--spacing) * 16);
-  }
-  .w-22 {
-    width: calc(var(--spacing) * 22);
   }
   .w-40 {
     width: calc(var(--spacing) * 40);
@@ -396,9 +383,6 @@
   .fill-current {
     fill: currentcolor;
   }
-  .p-2 {
-    padding: calc(var(--spacing) * 2);
-  }
   .p-4 {
     padding: calc(var(--spacing) * 4);
   }
@@ -426,6 +410,12 @@
   .py-16 {
     padding-block: calc(var(--spacing) * 16);
   }
+  .pt-4 {
+    padding-top: calc(var(--spacing) * 4);
+  }
+  .pt-8 {
+    padding-top: calc(var(--spacing) * 8);
+  }
   .pb-2 {
     padding-bottom: calc(var(--spacing) * 2);
   }
@@ -444,9 +434,21 @@
     font-size: var(--text-4xl);
     line-height: var(--tw-leading, var(--text-4xl--line-height));
   }
+  .text-5xl {
+    font-size: var(--text-5xl);
+    line-height: var(--tw-leading, var(--text-5xl--line-height));
+  }
+  .text-8xl {
+    font-size: var(--text-8xl);
+    line-height: var(--tw-leading, var(--text-8xl--line-height));
+  }
   .text-sm {
     font-size: var(--text-sm);
     line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
   }
   .tracking-tight {
     --tw-tracking: var(--tracking-tight);
@@ -482,10 +484,6 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
-  .duration-75 {
-    --tw-duration: 75ms;
-    transition-duration: 75ms;
-  }
   .duration-150 {
     --tw-duration: 150ms;
     transition-duration: 150ms;
@@ -494,20 +492,6 @@
     --tw-ease: var(--ease-in-out);
     transition-timing-function: var(--ease-in-out);
   }
-  .hover\:m-0 {
-    &:hover {
-      @media (hover: hover) {
-        margin: calc(var(--spacing) * 0);
-      }
-    }
-  }
-  .hover\:m-0\.5 {
-    &:hover {
-      @media (hover: hover) {
-        margin: calc(var(--spacing) * 0.5);
-      }
-    }
-  }
   .hover\:m-1\.5 {
     &:hover {
       @media (hover: hover) {
@@ -515,31 +499,10 @@
       }
     }
   }
-  .hover\:m-2 {
-    &:hover {
-      @media (hover: hover) {
-        margin: calc(var(--spacing) * 2);
-      }
-    }
-  }
-  .hover\:h-5 {
-    &:hover {
-      @media (hover: hover) {
-        height: calc(var(--spacing) * 5);
-      }
-    }
-  }
   .hover\:h-6 {
     &:hover {
       @media (hover: hover) {
         height: calc(var(--spacing) * 6);
-      }
-    }
-  }
-  .hover\:w-5 {
-    &:hover {
-      @media (hover: hover) {
-        width: calc(var(--spacing) * 5);
       }
     }
   }
@@ -582,16 +545,6 @@
   .md\:gap-y-0 {
     @media (width >= 48rem) {
       row-gap: calc(var(--spacing) * 0);
-    }
-  }
-  .md\:self-center {
-    @media (width >= 48rem) {
-      align-self: center;
-    }
-  }
-  .md\:self-end {
-    @media (width >= 48rem) {
-      align-self: flex-end;
     }
   }
   .md\:px-\[20\%\] {

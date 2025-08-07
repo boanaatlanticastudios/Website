@@ -1,16 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
   const title = "Boana Interactive";
-  const routeRef =
-    document.location.pathname === "/index.html"
-      ? "/home.html"
-      : document.location.pathname;
+  const routeRef = document.location.pathname;
   const routes = ["Home", "Projects", "About"];
 
   function toPath(route) {
     if (route === "Home") {
-      return "/index.html";
+      return "/";
     } else {
-      return `/${route.toLowerCase()}.html`;
+      return `/${route.toLowerCase()}`;
     }
   }
 
@@ -23,7 +20,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const header = document.getElementById("header");
   header.innerHTML = `<header class="bg-white backdrop-blur-2xl z-10 text-black">
             <div class="w-full h-24 p-4 flex justify-between items-center relative">
-                <img class="h-24" src="assets/imgs/icon.png" alt="boana icon">
+                <img class="h-24" src="${
+                  routeRef === "/"
+                    ? "assets/imgs/icon.png"
+                    : "../assets/imgs/icon.png"
+                }" alt="boana icon">
 
                 <div class="link absolute start-1/2 -translate-x-1/2">
                 </div>
@@ -39,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
         </header>
         <div id="sideMenu"
-            class="text-black absolute w-[35vw] translate-x-[100vw] flex flex-col bg-white/50 backdrop-blur-2xl top-0 h-dvh z-40 transition-all duration-150 ease-in-out">
+            class="z-50 text-black absolute w-[35vw] translate-x-[100vw] flex flex-col bg-white/50 backdrop-blur-2xl top-0 h-dvh transition-all duration-150 ease-in-out">
             <div class="h-16 p-4 flex items-center ">
                 <button class="cursor-pointer" id="openMenuButton">
                     <svg class="w-8 fill-current hover:text-black" xmlns="http://www.w3.org/2000/svg"
@@ -52,12 +53,27 @@ document.addEventListener("DOMContentLoaded", function () {
             <section class="flex-1 flex flex-col items-center px-16 link gap-y-4">
             </section>
         </div>`;
-  Array.from(document.getElementsByClassName("link")).forEach((e) => {
-    e.innerHTML = routes
-      .filter((route) => !route.includes(routeRef.match(/\/(\w+)\.html/)[1]))
-      .map((route) => getRouteHTML(route))
-      .join("");
-  });
+  try {
+    const endRoutes = routes.filter(
+      (route) =>
+        !route.toLowerCase().includes(
+          routeRef
+            .split("")
+            .filter((char) => char !== "/")
+            .join("")
+        )
+    );
+    Array.from(document.getElementsByClassName("link")).forEach((e) => {
+      if (endRoutes.length === 0) {
+        e.innerHTML = routes
+          .slice(1)
+          .map((route) => getRouteHTML(route))
+          .join("");
+      } else {
+        e.innerHTML = endRoutes.map((route) => getRouteHTML(route)).join("");
+      }
+    });
+  } catch (error) {}
   const sideMenu = document.getElementById("sideMenu");
   const menuButton = document.getElementById("menuButton");
   const openMenuButton = document.getElementById("openMenuButton");

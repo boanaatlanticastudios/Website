@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const title = "Boana Interactive";
+  const routeRef = document.location.pathname;
   const hoverColor = "black";
   const domain = "boanaatlanticastudios.com";
   const instaURL = "https://www.instagram.com/boanaatlanticastudios/";
@@ -48,7 +48,11 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
 
             <div class="md:flex-1">
-                <img class="aspect-auto w-40 mx-auto" src="assets/imgs/icon.png" alt="boana icon">
+                <img class="aspect-auto w-40 mx-auto" src="${
+                  routeRef === "/"
+                    ? "assets/imgs/icon.png"
+                    : "../assets/imgs/icon.png"
+                }" alt="boana icon">
                 <h3 class="text-2xl tracking-tight text-center">
                     All rights reserved.
                 </h3>
