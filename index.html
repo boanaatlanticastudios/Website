@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boana</title>
+    <base href="">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="javascript/components/header.js"></script>
+    <script src="javascript/components/footer.js"></script>
+    <script src="javascript/components/home.js" type="module"></script>
+</head>
+
+<body>
+    <section id="header" class="sticky top-0"></section>
+
+    <section class="flex-1 flex justify-center items-center gap-y-16 px-24">
+        <svg id="retro" class="w-16 me-24 cursor-pointer" viewBox="0 0 100 100" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M50 33.3333L33.3333 50M33.3333 50L50 66.6667M33.3333 50H66.6667M91.6667 50C91.6667 73.0119 73.0119 91.6667 50 91.6667C26.9881 91.6667 8.33334 73.0119 8.33334 50C8.33334 26.9881 26.9881 8.33334 50 8.33334C73.0119 8.33334 91.6667 26.9881 91.6667 50Z"
+                stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+
+        <div id="carrousel" class="relative w-[80%] h-fit ">
+            <div
+                class="bg-white absolute top-full z-10 flex justify-center items-center rounded-full start-1/2 -translate-1/2 gap-x-8">
+                <div
+                    class="w-4 h-4 m-2.5 aspect-square rounded-full bg-black hover:w-6 hover:h-6 hover:m-1.5 cursor-pointer ">
+                </div>
+                <div
+                    class="w-4 h-4 m-2.5 aspect-square rounded-full bg-black hover:w-6 hover:h-6 hover:m-1.5 cursor-pointer ">
+                </div>
+                <div
+                    class="w-4 h-4 m-2.5 aspect-square rounded-full bg-black hover:w-6 hover:h-6 hover:m-1.5 cursor-pointer ">
+                </div>
+            </div>
+        </div>
+
+
+        <svg id="pass" class="w-16 rotate-180 ms-24 cursor-pointer" viewBox="0 0 100 100" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M50 33.3333L33.3333 50M33.3333 50L50 66.6667M33.3333 50H66.6667M91.6667 50C91.6667 73.0119 73.0119 91.6667 50 91.6667C26.9881 91.6667 8.33334 73.0119 8.33334 50C8.33334 26.9881 26.9881 8.33334 50 8.33334C73.0119 8.33334 91.6667 26.9881 91.6667 50Z"
+                stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+
+    </section>
+
+    <footer id="footer" class="px-16 py-8 bg-white text-black"></footer>
+
+</body>
+
+</html>
