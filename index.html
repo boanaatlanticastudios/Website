@@ -10,37 +10,41 @@
     <script src="javascript/components/header.js"></script>
     <script src="javascript/components/footer.js"></script>
     <script src="javascript/components/home.js" type="module"></script>
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="manifest" href="/site.webmanifest">
 </head>
 
 <body>
     <section id="header" class="sticky top-0 z-50"></section>
 
-    <section class="flex-1 flex justify-center items-center gap-y-16 px-24">
-        <svg id="retro" class="w-16 me-24 cursor-pointer" viewBox="0 0 100 100" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
+    <section class="flex-1 flex justify-center items-center gap-y-16 md:px-24 relative">
+        <svg id="retro" class="w-16 md:me-24 cursor-pointer md:relative absolute top-1/2 -translate-y-1/2 z-10 start-0"
+            viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
                 d="M50 33.3333L33.3333 50M33.3333 50L50 66.6667M33.3333 50H66.6667M91.6667 50C91.6667 73.0119 73.0119 91.6667 50 91.6667C26.9881 91.6667 8.33334 73.0119 8.33334 50C8.33334 26.9881 26.9881 8.33334 50 8.33334C73.0119 8.33334 91.6667 26.9881 91.6667 50Z"
                 stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
 
-        <div id="carrousel" class="relative w-[80%] h-fit">
+        <div class="relative w-full md:w-[90%] lg:w-[60%]  ">
+            <div id="carrousel" class="relative w-full h-fit md:rounded-[50px] overflow-clip"></div>
             <div class=" bg-white absolute top-full flex justify-center items-center rounded-full start-1/2
-            -translate-1/2 gap-x-8">
-                <div
-                    class="w-4 h-4 m-2.5 aspect-square rounded-full bg-black hover:w-6 hover:h-6 hover:m-1.5 cursor-pointer ">
+                -translate-1/2 md:gap-x-8 gap-x-2 z-10">
+                <div id="change1"
+                    class="w-4 md:m-2.5 m-1 aspect-square rounded-full bg-black hover:w-6  cursor-pointer ">
                 </div>
-                <div
-                    class="w-4 h-4 m-2.5 aspect-square rounded-full bg-black hover:w-6 hover:h-6 hover:m-1.5 cursor-pointer ">
+                <div id="change2"
+                    class="w-4 md:m-2.5 m-1 aspect-square rounded-full bg-black hover:w-6  cursor-pointer ">
                 </div>
-                <div
-                    class="w-4 h-4 m-2.5 aspect-square rounded-full bg-black hover:w-6 hover:h-6 hover:m-1.5 cursor-pointer ">
+                <div id="change3"
+                    class="w-4 md:m-2.5 m-1 aspect-square rounded-full bg-black hover:w-6  cursor-pointer ">
                 </div>
             </div>
         </div>
 
-
-        <svg id="pass" class="w-16 rotate-180 ms-24 cursor-pointer" viewBox="0 0 100 100" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
+        <svg id="pass"
+            class="w-16 rotate-180 md:ms-24 cursor-pointer md:relative absolute top-1/2 -translate-y-1/2 z-10 end-0"
+            viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
                 d="M50 33.3333L33.3333 50M33.3333 50L50 66.6667M33.3333 50H66.6667M91.6667 50C91.6667 73.0119 73.0119 91.6667 50 91.6667C26.9881 91.6667 8.33334 73.0119 8.33334 50C8.33334 26.9881 26.9881 8.33334 50 8.33334C73.0119 8.33334 91.6667 26.9881 91.6667 50Z"
                 stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
@@ -48,7 +52,7 @@
 
     </section>
 
-    <footer id="footer" class="px-16 py-8 bg-white text-black"></footer>
+    <footer id="footer" class="md:px-16 py-8 bg-white text-black"></footer>
 
 </body>
 

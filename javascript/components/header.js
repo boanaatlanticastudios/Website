@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     : "../assets/imgs/icon.png"
                 }" alt="boana icon">
 
-                <div class="link absolute start-1/2 -translate-x-1/2">
+                <div class="link absolute start-1/2 -translate-x-1/2 md:block hidden">
                 </div>
 
                 <div class="flex">
