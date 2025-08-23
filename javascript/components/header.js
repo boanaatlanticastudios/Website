@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
         </header>
         <div id="sideMenu"
-            class="z-50 text-black absolute w-[35vw] translate-x-[100vw] flex flex-col bg-white/50 backdrop-blur-2xl top-0 h-dvh transition-all duration-150 ease-in-out">
+            class="z-50 text-white absolute md:w-[35vw] w-full translate-x-[100vw] flex flex-col bg-black/50 backdrop-blur-2xl top-0 h-dvh transition-all duration-150 ease-in-out">
             <div class="h-16 p-4 flex items-center ">
                 <button class="cursor-pointer" id="openMenuButton">
                     <svg class="w-8 fill-current hover:text-black" xmlns="http://www.w3.org/2000/svg"
@@ -49,8 +49,24 @@ document.addEventListener("DOMContentLoaded", function () {
                             d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
                     </svg>
                 </button>
+                <h1 class="text-4xl w-full pe-8 text-center">MENU</h1>
             </div>
-            <section class="flex-1 flex flex-col items-center px-16 link gap-y-4">
+            <section class="flex-1 flex flex-col items-center md:px-24 px-16 gap-y-4">
+                <a href="${toPath(
+                  routes[0]
+                )}" class="hover:underline text-black text-2xl capitalize w-full bg-white text-center rounded-full py-2">${
+    routes[0]
+  }</a>
+                <a href="${toPath(
+                  routes[1]
+                )}" class="hover:underline text-black text-2xl capitalize w-full bg-white text-center rounded-full py-2">${
+    routes[1]
+  }</a>
+                <a href="${toPath(
+                  routes[2]
+                )}" class="hover:underline text-black text-2xl capitalize w-full bg-white text-center rounded-full py-2">${
+    routes[2]
+  }</a>
             </section>
         </div>`;
   try {
@@ -80,10 +96,10 @@ document.addEventListener("DOMContentLoaded", function () {
   menuButton.addEventListener("click", () => {
     sideMenu.classList.remove("opacity-0");
     sideMenu.classList.remove("translate-x-[100vw]");
-    sideMenu.classList.add("translate-x-[calc(100vw-35vw)]");
+    sideMenu.classList.add("md:translate-x-[calc(100vw-35vw)]");
   });
   openMenuButton.addEventListener("click", () => {
-    sideMenu.classList.remove("translate-x-[calc(100vw-35vw)]");
+    sideMenu.classList.remove("md:translate-x-[calc(100vw-35vw)]");
     sideMenu.classList.add("translate-x-[100vw]");
     sideMenu.classList.add("opacity-0");
   });

@@ -10,19 +10,19 @@ document.addEventListener("DOMContentLoaded", function () {
   const games = [
     {
       id: "game1",
-      desc: "Little John Adventures Teaser 1",
+      desc: "Little John Adventures Teaser",
       img: "/assets/imgs/lj.png",
       teaser: "https://www.youtube.com/watch?v=P3sWA8ncn_c",
     },
     {
       id: "game2",
-      desc: "Little John Adventures Teaser 2",
+      desc: "Little John Adventures Teaser",
       img: "/assets/imgs/lj.png",
       teaser: "https://www.youtube.com/watch?v=P3sWA8ncn_c",
     },
     {
       id: "game3",
-      desc: "Little John Adventures Teaser 3",
+      desc: "Little John Adventures Teaser",
       img: "/assets/imgs/lj.png",
       teaser: "https://www.youtube.com/watch?v=P3sWA8ncn_c",
     },

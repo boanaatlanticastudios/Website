@@ -3,9 +3,12 @@ import { simpleGameCard } from "./gameCard.js";
 document.addEventListener("DOMContentLoaded", function () {
   const projects = [
     {
-      title: "Game title",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      title: "Little John Adventures",
       img: "/assets/imgs/lj.png",
+    },
+    {
+      title: "????",
+      img: "",
     },
   ];
 
@@ -14,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
   projectsDOM.innerHTML = projects
     .map((e) => {
       idx++;
-      return simpleGameCard(`game${idx}`, e.img);
+      return simpleGameCard(`game${idx}`, e.title, e.img);
     })
     .join("");
 });
